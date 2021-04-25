@@ -36,19 +36,24 @@ public class Programa {
                      System.out.println("\nCONSULTA DE PRODUTOS");
                      System.out.println("---------- ----------");
                      System.out.println("\nDigite o nome do produto a consultar.");
-                     String nomeConsulta = ler.nextLine();
+                     ler.nextLine(); 
 
+                     if (produtos.isEmpty()){
+                        System.out.println("Não há nenhum produto cadastrado.");
+                    } else
+                     System.out.println("\n--------------------------");
+                     System.out.println("-------- PRODUTOS ----------");
+                     System.out.println("----------------------------");
+                     System.out.println("\nProdutos encontrados:");
+                     System.out.println("***********************");
                      for (Produto produto : produtos) {
-                     if(produto.getNome().equalsIgnoreCase(nomeConsulta)){
-                         System.out.println("\nProduto localizado:"); 
-                         System.out.println(produto); break;
-                     } else
-                      if(produto.getNome() == null){
-                         System.out.println("Não há nenhum produto com esse código");
+                         System.out.println(produto);
                      }
-                 }
+                     
                     break;
                     case 2:
+                     System.out.println("\n--------- INCLUSÃO DE PRODUTOS ----------");
+                     System.out.println("-------------------------------------------");
                      int cod;
                      do{
                      System.out.println("\nDigite o código do produto a incluir ou -1 para sair.");
@@ -67,20 +72,50 @@ public class Programa {
                          }
 
                      } while(cod != -1);
-                    break;
+                     break;
                     case 0:
+                     break;
+                    default:
+                    System.out.println("Opção inválida! Tente novamente ou volte ao menu inicial.");
                 }
 
-             } while(opcao != -1);
+             } while(opcao != 0);
                    break;
                 case 2:
                 do{
-                    System.out.println("1 - Produtos");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("----------- RELATÓRIOS -----------");
+                    System.out.println("----------------------------------");
+                    System.out.println("\n1 - Produtos");
                     System.out.println("2 - Venda por período - detalhado");
                     System.out.println("3 - Venda por período - consolidado");
                     System.out.println("0 - Voltar ao menu anterior");
+                    opcao = ler.nextInt();
+                    ler.nextLine();
 
-                } while(opcao != -1);
+                    switch(opcao){
+                        case 1:
+                        System.out.println("\n--------RELATÓRIO PRODUTOS--------");
+
+                        if(produtos.isEmpty()){
+                         System.out.println("\nNão há dados/produtos para a emissão do relatório"); 
+                        } else
+                          for (Produto produto : produtos) {
+                            System.out.println(produto);
+                            System.out.println("\nCódigo                Nome          Valor($)         Estoque");
+                              System.out.println("------------------------------------------------------------");
+                         }
+
+                        break;
+                        case 2:
+                        break;
+                        case 3:
+                        break;
+                        case 0:
+                        break;
+                    }
+
+                } while(opcao != 0);
                     break;
                 case 3:
                 break;

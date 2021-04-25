@@ -7,6 +7,10 @@ public class Produto {
     private int quantidadeEstoque;
     
     public Produto(int cod, String nomeProduto, double valorProduto, int quantidadeProduto) {
+        this.codigo = cod;
+        this.nome = nomeProduto;
+        this.valor = valorProduto;
+        this.quantidadeEstoque = quantidadeProduto;
     }
     public String getNome() {
         return nome;
@@ -31,8 +35,7 @@ public class Produto {
     }
     @Override
     public String toString() {
-        return "Produto -> Código =\s" + codigo + ", Nome =\s" + nome + ", Quantidade em Estoque =\s" + quantidadeEstoque + ", valor =\s"
-        + valor ;
+        return "Produto -> Código =\s" + codigo + ", Nome =\s" + nome + ", Valor =\s" + valor + ", Quantidade em estoque =\s" + quantidadeEstoque;
     }
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
