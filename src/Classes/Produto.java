@@ -1,10 +1,20 @@
 package Classes;
 
+import java.time.LocalDate;
+
 public class Produto {
     private String nome;
     private int codigo;
     private double valor;
     private int quantidadeEstoque;
+    private LocalDate dataCadastro;
+
+    public LocalDate getDataCadastro() {
+        return dataCadastro;
+    }
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
     
     public Produto(int cod, String nomeProduto, double valorProduto, int quantidadeProduto) {
         this.codigo = cod;
