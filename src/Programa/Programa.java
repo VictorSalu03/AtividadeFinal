@@ -44,7 +44,7 @@ public class Programa {
                 switch(opcao){
                     case 1:
                      System.out.println("\nCONSULTA DE PRODUTOS");
-                     System.out.println("---------- ----------");
+                     System.out.println("----------- -----------");
                      System.out.println("\nDigite o nome do produto a consultar.");
                      String nomeConsulta = ler.nextLine(); 
 
